@@ -1,0 +1,546 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% paquetes matemáticos
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amscd}
+\usepackage{latexsym}
+\usepackage{hyperref}
+
+
+%paquetes gráficos
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[width=18cm,height=21cm,top=2cm,left=2cm, right=2cm]{geometry}
+\setlength\parindent{0pt}
+
+\definecolor{moradito}{rgb}{119, 0, 218}
+
+%paquete para cambiar las etiquetas en listas
+\usepackage{enumerate}
+\usepackage{multicol}
+
+\usepackage{thm-restate}
+\usepackage{thmtools}
+
+
+\declaretheorem{theorem}
+\declaretheorem[name=Teorema, parent=section]{teorema}
+\declaretheorem[name=Lema, sibling=teorema]{lema}
+\declaretheorem[name=Proposición]{prop}
+\declaretheorem[name=Corolario]{corol}
+\declaretheorem[name=Definición, shaded={rulecolor=blue,rulewidth=1pt,bgcolor=yellow!25}]{definicion}
+
+
+\DeclareMathOperator*{\limito}{LiM}
+
+%paquetes idioma
+%\usepackage[spanish]{babel}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+%cambiando títulos de secciones
+\renewcommand{\abstractname}{Resumen}
+\renewcommand{\refname}{Libros}
+\renewcommand{\figurename}{Fig.}
+
+%creación de comandos
+
+%comando literal
+\newcommand{\raiz}{\ensuremath{\sqrt{x^4+5}}}
+%comando un argumento
+\newcommand{\ecu}[1]{\ensuremath{x^{#1}+y^{#1}=z^{#1}}} 
+%comando dos argumentos
+\newcommand{\ecudos}[2]{\ensuremath{x^{#1}+y^{#1}=z^{#2}}}
+%comando con un argumento opcional
+\newcommand{\ecuop}[1][2]{\ensuremath{x^{#1}+y^{#1}=z^{#1}}}
+
+\newcommand{\ecutres}[3][a]{\ensuremath{x^{#1}+y^{#2}=z^{#3}}}
+
+\newcommand{\suc}{\ensuremath{\mathcal\{x_n\}_{n\in \mathbb{N}}}}
+\newcommand{\suce}[1][x]{\ensuremath{\mathcal\{#1_n\}_{n\in \mathbb{N}}}}
+
+\renewcommand{\sin}{\operatorname{sen}}
+
+\title{Prueba2}
+\author{Manuel Corral Pazos}
+\date{26 de julio de 2022}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+	\noindent Aquí va el abstract. Voy a escribir más de una línea para que se vea cómo se rompen las líneas y se vea el ancho del párrafo del abstrat. Así nos hacemos una idea de cómo se vería.\\
+	Diría que nada más.
+\end{abstract}
+
+\section[Martes mañana]{Primera sección, Martes mañana}
+Esta es la primera sección.
+\subsection[Colores]{Algunos colores}
+Esta es una subsección de la primera sección\\
+Probamos a escribir en color, por ejemplo \textcolor{blue}{\bf esto iría en azul}. \textcolor{red}{\bf Esto iría en rojo.} Le ponemos el bf para que aparezca en negrita. Ahora utilizamos el \textcolor{moradito}{\bf color que definimos en la cabecera.}
+
+\subsection*{Enumerate (sección con *)}
+
+\begin{enumerate}[i).-]
+	\item Resuelve $\lim_{x\to \infty}\frac{1}{x^2+1}$
+	\begin{enumerate}[1;]
+		\item Calcula el límite anterior cuando $x\to 5$
+		\item Calcula el límite anterior cuando $x\to 10$
+	\end{enumerate} 
+	\item Resuelve $\lim_{x\to \infty} x$
+\end{enumerate}
+
+\begin{enumerate}
+	\item Resuelve $\lim_{x\to \infty}\frac{1}{x^2+1}$
+	\item Resuelve $\lim_{x\to \infty}\frac{1}{x^3+1}$
+	\item Resuelve $\lim_{x\to \infty}\frac{1}{x^4+1}$
+	\addtocounter{enumi}{2}
+	\begin{enumerate} 
+		\item Calcula el límite anterior cuando $x\to 5$
+		\item Calcula el límite anterior cuando $x\to 10$
+	\end{enumerate} 
+	\item Resuelve $\lim_{x\to \infty} x$
+	\item Resuelve $\lim_{x\to \infty}\frac{1}{x^6+1}$
+	\item Resuelve $\lim_{x\to \infty}\frac{1}{x^7+1}$
+	\addtocounter{enumi}{-5}
+	\item Resuelve $\lim_{x\to \infty}\frac{1}{x^8+1}$
+\end{enumerate}
+
+
+\section{Segunda sección}
+Esta es la segunda sección
+\subsection[Matemáticas]{Escribir en matemáticas}
+Esta es una subsección de la segunda sección.\\
+Ejemplos de escribir matemáticamente
+Ejemplo para introducir matemáticas en una línea $y=f(x)=x+2$, ahora en bloque \[y=f(x)=x+2\]
+
+\begin{definicion}[Grupo abeliano] \label{definicion:abeliano}
+	Un grupo abeliano (aditivo) está formado por una pareja $(A, +)$, donde $A$ es un conjunto no vacío y $+ : A\times A \rightarrow A$ es una aplicación (que llamamos operación binaria o ley de composición interna y denotamos $+ (a, b) = a + b$); que satisfacen los siguientes axiomas:
+	\begin{enumerate}
+		\item "+" es asociativa; es decir, para cualesquiera elementos $ a,b,c\in A$ se tiene $a+(b+c)=(a+b)+c$.
+		\item Existe el (único) neutro que solemos escribir $0\in A$ tal que $0+a=a+0=a, \forall a\in A$.
+	\end{enumerate}
+\end{definicion}
+
+\begin{teorema}[Pequeño Teorema de Euler] \label{thm:pequeñoeuler}
+	Sean $a,m\in \mathbb{Z}$ tales que $\gcd(a, m)=1$, entonces \[a^{\phi(m)}\equiv_m1\]
+\end{teorema}
+
+Como se puede ver en el Pequeño Teorema de Euler \ref{thm:pequeñoeuler}, queda demostrado.
+
+\begin{teorema}
+	Sean $\forall A, B, C\in \mathcal{M}_{m\times n}(\mathcal{R})$ y $\forall \alpha, \beta\in \mathbb{R}$, se verifica:
+	\begin{multicols}{2}
+		\begin{enumerate} 
+			\item $A+B=B+A$
+			\item $\alpha(\beta A)=(\alpha \beta)A$
+			\item $(A+B)+C=A+(B+C)$
+			\item $(\alpha+\beta)A=\alpha A + \beta B$
+		\end{enumerate}
+	\end{multicols}
+\end{teorema}
+
+
+\begin{lema}
+	Sea K un cuerpo. El cojunto $\mathbb{M}_{m\times n}(K)$, junto con la suma definida tiene estructura de grupo abueliano.
+\end{lema}
+
+
+\subsection[Escritura]{Algo de escritura}
+Aquí ponemos algún array
+\[
+\left (
+\begin{array}{rrr|r} 
+	-1 & 2 &  3 &   0 \\ 
+	3 & 4 & -7 &   2\\
+	6 & 5 & 90 & -11
+\end{array} 
+\right )
+\]
+
+Ponemos una ecuación para referenciar
+\begin{equation} \label{eq:1} 
+	\sum_{i=0}^{\infty} a_i x^i
+\end{equation}
+
+Ecuación \ref{eq:1} referenciada
+
+
+\section[Martes tarde]{Tercera seccion, martes por la tarde}
+En esta sección vamos a ver matrices, arrays, etc.
+Por ejemplo, ponemos una matriz de la forma rrr|r
+
+\[
+\left (
+\begin{array}{rrr|r} 
+	-1 & 2 &  3 &   0 \\ 
+	3 & 4 & -7 &   2\\
+	6 & 5 & 90 & -11
+\end{array} 
+\right )
+\]
+
+\subsection{Sistema de ecuaciones}
+Ponemos ahora un sistema de ecuaciones
+
+\[
+\left \{
+\begin{array}{rr} 
+	x+y-2z & = 5 \\
+	-3x+5y-4z & = 0 \\
+	3x+y+z & = 8
+\end{array}
+\right .
+\]
+
+\subsection{Otro sistema de ecuaciones}
+De otra forma
+\[
+\left \{
+\begin{array}{r}
+	x+y-2z  = 5 \\
+	-3x+5y-4z  = 0 \\
+	3x+y+z = 8
+\end{array}
+\right .
+\]
+
+\begin{restatable}{theorem}{propMatr} \label{thm:propMatr}
+	Sean $\forall A, B, C\in \mathcal{M}_{m\times n}(\mathcal{R})$ y $\forall \alpha, \beta\in \mathbb{R}$, se verifica:
+	\begin{multicols}{2}
+		\begin{enumerate} 
+			\item $A+B=B+A$
+			\item $\alpha(\beta A)=(\alpha \beta)A$
+			\item $(A+B)+C=A+(B+C)$
+			\item $(\alpha+\beta)A=\alpha A + \beta B$
+		\end{enumerate}
+	\end{multicols}
+\end{restatable}
+
+\section[Miercoles mañana]{Miércoles por la mañana}
+
+Operador límite:
+
+Calcula $\lim_{x\to \infty}\frac{1}{x^2+1}$ y la suma de la serie $\sum_{n=1}^{\infty}\frac{1}{n^2+1}$
+
+\subsection{Centrando}
+
+El mismo límite centrado:
+
+\[
+\lim_{x\to \infty}\frac{1}{x^2+1} \hspace{2cm} \sum_{n=1}^{\infty}\frac{1}{n^2+1}\hspace{2cm}
+\]
+
+En una línea con displaystyle $\displaystyle\lim_{x\to \infty}\frac{1}{x^2+1}$, y la serie $\displaystyle \sum_{n=1}^{\infty}\frac{1}{n^2+1}$
+
+Utilizando la función LIM $\limito_{x\to \infty^{n\neq\dot{2}}\frac{1}{x^2+1}}$, con displaystyle $\displaystyle\limito_{x\to \infty^{n\neq\dot{2}}\frac{1}{x^2+1}}$
+
+Ahora ponemos LiM como operatorname $\operatorname{LiM}_{x\to \infty^{n\neq\dot{2}}\frac{1}{x^2+1}}$, con displaystyle $\displaystyle\operatorname{LiM}_{x\to \infty^{n\neq\dot{2}}\frac{1}{x^2+1}}$
+
+Calcula la unión de los conjuntos $\cup_{n=1}^{\infty} [n,n+1)$
+
+Calcula la unión de los conjuntos $\cap_{n=1}^{\infty} [n,n+1)$
+
+\subsection{Paquete CD}
+Hacemos un diagrama con CD
+\[
+\begin{CD} 
+	A @>j>> B @>>c> C \\
+	@VVV @AAhA @| \\
+	D @= E @>>p> F 
+\end{CD}
+\]
+
+Para pegarlo a la esquina
+$\displaystyle \begin{CD}
+	A @>j>> B @>>c> C \\
+	@VVV @AAhA @| \\
+	D @= E @>>p> F 
+\end{CD}$
+
+Hacemos un diagrama tipo Gauss con el cd
+\[
+\begin{CD}
+	\left(\begin{array}{rr|r}
+		1&3&1\\
+		-2&-6&-2
+	\end{array}\right) @>>{\begin{matrix}
+							f_2+2f_1\\1f_1
+						\end{matrix}}>
+	\left(\begin{array}{rr|r}
+		1&3&1\\
+		0&0&0
+\end{array}\right) \Rightarrow x_1=1-3x_2
+\end{CD}
+\]
+
+\subsection{Alguna pmatrix}
+
+Escribe que $\mathcal{B} = \{
+	\begin{pmatrix}
+		1 & 0 \\ 1 & 0
+	\end{pmatrix},
+	\begin{pmatrix}
+		1 & 2 \\ 0 & 0
+	\end{pmatrix},
+	\begin{pmatrix}
+		1 & 0 \\ 2 & 1
+	\end{pmatrix},
+	\begin{pmatrix}
+		0 & 1 \\ 1 & 0
+	\end{pmatrix}	
+\}$ es una base del espacio vectorial $\mathcal{M}_2(\mathbb{R})$. Se pide, aunque no se pida nada;
+Sabemos que $\exists A \in \mathcal{M}_2(\mathbb{R})$ tal que 
+	\[[A]_{\mathcal{C}}=\begin{pmatrix} 
+			4\\0\\4\\1
+	\end{pmatrix}
+	\]
+	Y $\nexists M \in \mathcal{M}_2(\mathbb{R})$ tal que $[M]_{\mathcal{B}}=\begin{pmatrix}
+		4\\0\\4\\1
+	\end{pmatrix}$
+\vspace{2cm}
+
+Calcula $1+2+3+\cdots + 25$, en vez de $2+4+6+\dots$
+\vspace{2cm}
+
+\subsection*{Entornos de enumeración}
+\textbf{Itemize}
+\begin{itemize}
+	\item Resuelve $\lim_{x\to \infty}\frac{1}{x^2+1}$
+	\begin{itemize}
+		\item Calcula el límite anterior cuando $x\to 5$
+	\end{itemize} 
+	\item Resuelve $\lim_{x\to \infty} x$
+\end{itemize}
+
+\textbf{Itemize con etiqueta cambiada}
+\begin{itemize}
+	\item[1] Resuelve $\lim_{x\to \infty}\frac{1}{x^2+1}$
+		\begin{itemize}
+			\item Calcula el límite anterior cuando $x\to 5$
+		\end{itemize} 
+	\item Resuelve $\lim_{x\to \infty} x$
+\end{itemize}
+
+\textbf{Enumerate}
+\begin{enumerate}
+	\item Resuelve $\lim_{x\to \infty}\frac{1}{x^2+1}$
+	\begin{enumerate} \setcounter{enumii}{4} %empiezo en e)
+		\item Calcula el límite anterior cuando $x\to 5$
+	\end{enumerate} 
+	\item Resuelve $\lim_{x\to \infty} x$
+\end{enumerate}
+
+Continuamos con la lista
+
+\begin{enumerate} \setcounter{enumi}{2} %empiezo en 3
+	\item Resuelve $Ax+b=c$
+	\item Resuelve $1+3x=y$
+\end{enumerate}
+
+\textbf{Enumerate con etiqueta cambiada}
+\begin{enumerate}
+	\item[$\bullet$]Resuelve $\lim_{x\to \infty}\frac{1}{x^2+1}$
+	\begin{enumerate}
+		\item Calcula el límite anterior cuando $x\to 5$
+	\end{enumerate} 
+	\item Resuelve $\lim_{x\to \infty} x$
+\end{enumerate}
+
+\textbf{Description}
+\begin{description}
+	\item[Casa] Lugar para vivir personas. Queremos que esto tenga más de una línea, para ver cómo queda al compilar. No llegó con eso, ponemos un poco más de texto.
+	\item[Tienda] Lugar en el que se compra. También queremos que tenga más de una línea, a ver si esta vez somos capaces de conseguirlo.
+	
+\end{description}
+
+Ahora usamos el paquete enumerate
+
+\textbf{Enumerate}
+\begin{enumerate}[i).-]
+	\item Resuelve $\lim_{x\to \infty}\frac{1}{x^2+1}$
+	\begin{enumerate}[1;]
+		\item Calcula el límite anterior cuando $x\to 5$
+		\item Calcula el límite anterior cuando $x\to 10$
+	\end{enumerate} 
+	\item Resuelve $\lim_{x\to \infty} x$
+\end{enumerate}
+
+\subsection{Creación de comandos}
+
+Comandos creados en el preámbulo de la página con \verb*|newcommand|
+
+\begin{description}
+	\item[Raiz] \raiz
+	\item[Ecu 1 arg] \ecu{3}
+	\item[Ecu 2 args] \ecudos{2}{6}
+	\item[Ecu op] \ecuop[\phi+1]
+	\item[Ecu op default] \ecuop
+	\item[Ecu tres] \ecutres{1}{2}
+	\item[Suc] \suc
+	\item[Suce] \suce[A]
+	\item[Suce sin arg] \suce
+	\item[Suce+suce] \suce[a] + \suce[b] = \suce
+	\item[Sin] $\sin(\alpha)$
+\end{description}
+
+\subsection{Entorno theorem}
+
+\begin{teorema}[Euler] \label{thm:euler}
+	Sean $a,m\in \mathbb{Z}$ tales que $\gcd(a, m)=1$, entonces \[a^{\phi(m)}\equiv_m1\]
+\end{teorema}
+
+Como se puede ver en el Teorema de Euler \ref{thm:euler}, queda demostrado.
+
+\begin{teorema}
+	Sean $\forall A, B, C\in \mathcal{M}_{m\times n}(\mathcal{R})$ y $\forall \alpha, \beta\in \mathbb{R}$, se verifica:
+	\begin{multicols}{2}
+		\begin{enumerate} 
+			\item $A+B=B+A$
+			\item $\alpha(\beta A)=(\alpha \beta)A$
+			\item $(A+B)+C=A+(B+C)$
+			\item $(\alpha+\beta)A=\alpha A + \beta B$
+		\end{enumerate}
+	\end{multicols}
+\end{teorema}
+
+\begin{restatable}{lema}{carath}Caratheodory.\label{lema:carath}
+	Sea $f(z)$ una función analítica en la bola cerrada $B(0,r)$ con centro 0 y radio r. Sea $f'(z)$ una función que definimos para rellenar texto.
+\end{restatable}
+
+\begin{prop}[Dos cuerpos]
+	Sean...
+\end{prop}
+
+\begin{corol}
+	Para toda matriz A, existen matrices invertibles, producto de matrices elementales, E, F, tales que E $\cdot$ A, es la forma escalonada de A, y 
+	\[
+		EAF=\begin{pmatrix}
+			1&\\
+			& \ddots& & &  0 \\
+			& & 1 & \\
+			& & & 0 & \\
+			& 0 & & & \ddots\\
+			& & & & &0\\
+		\end{pmatrix}
+	\]
+\end{corol}
+
+\begin{lema}[Segundo lema]
+	Sea...
+\end{lema}
+
+\begin{definicion}[Anillo] \label{definicion:anillo}
+	Un anillo está formado por tres ingredientes $(A,+,\cdot)$, donde $A$ es un conjunto no vacío, $+ : A\times A \rightarrow A$ es una aplicación y $\cdot: A\times A \rightarrow A$ es una aplicación (producto); que satisfacen los siguientes axiomas:
+		\begin{enumerate}
+		\item  $(A,+)$ es grupo abeliano.
+		\item "+" es asociativa; es decir, para cualesquiera elementos $ a,b,c\in A$ se tiene $a+(b+c)=(a+b)+c$.
+		\item Exixste el (único) neutro para $\cdot$ que solemos escribir $1\in A$ tal que $1\cdot a=a\cdot 1=a, \forall a\in A$;
+	\end{enumerate}
+\end{definicion}
+
+\begin{definicion}[Matriz] \label{definicion:matriz}
+		Sea K un cuerpo y $m, n\in \mathbb{N}$. Una matriz de orden $m\times n$ (en este orden) es un array bidimensional de elementos de K dispuestos en fimas de m, y columnas de n elementos; es decir:
+		\[
+		\begin{pmatrix}
+			a_{11}&a_{12}& \dots & a_{1n}\\
+			\vdots &\vdots \\
+			a_{m1}&a_{m2}& \dots & a_{mn}
+		\end{pmatrix}
+		\]
+\end{definicion}
+
+Hacemos referencia a la definición de matriz \ref{definicion:matriz}
+Hacemos referencia a la definición de anillo \ref{definicion:anillo}
+También hicimos una definición de Grupo abeliano \ref{definicion:abeliano} en una sección anterior.
+
+%se pone ~ para que no salte de línea entre la palabra y la referencia
+Ahora rescatamos el lema~\ref{lema:carath}, que está en la página~\pageref{lema:carath} como sigue:
+\carath*
+
+También rescatamos el teorema~\ref{thm:propMatr}, que está en la página~\pageref{thm:propMatr} como sigue:
+\propMatr*
+
+\section[Tablas y figuras]{Miércoles tarde: tablas y figuras}
+
+\subsection{Tablas}
+\begin{center}
+
+	\begin{tabular}{|c|r|c|c|cc|}
+	\hline
+	a & \multicolumn{2}{r|}{bloque} & c & d & e \\
+	\hline
+	11 & 22 & 33 & 44 & 55 & 66 \\
+	
+	0 & 1 & 0 & 1 & cosa & $x^{}4$ \\
+	\hline
+	33 & 44 & 55 & 66 & 222 & 3 \\
+	\hline
+	\end{tabular}
+\end{center}
+
+\begin{center}
+	\begin{tabular}{c|ccc}
+		
+		$x$ & 1 & 2 & 3 \\
+		\hline \\ [-0.2cm]
+		$f(x)=x+1$ & 2 & 3 & 4 \\
+		
+	\end{tabular}
+\end{center}
+
+\begin{center}
+	\renewcommand{\arraystretch}{2}
+	\begin{tabular}{|c|r|c|c|c|c|}
+		\hline
+		a & \multicolumn{2}{r|}{bloque} & c & d & e \\
+		\hline
+		11 & 22 & 33 & 44 & 55 & 66 \\ 
+		\hline
+		0 & 1 & 0 & 1 & cosa & $x^{}4$ \\
+		\hline
+		33 & 44 & 55 & 66 & 222 & 3 \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\renewcommand{\arraystretch}{1}
+\begin{center}
+	
+	\begin{tabular}{|c|r|c|c|c|c|}
+		\hline
+		a & \multicolumn{2}{r|}{bloque} & c & d & e \\
+		\hline
+		11 & 22 & 33 & 44 & 55 & 66 \\ 
+		\hline
+		0 & 1 & 0 & 1 & cosa & $x^{}4$ \\
+		\hline
+		33 & 44 & 55 & 66 & 222 & 3 \\
+		\hline
+	\end{tabular}
+\end{center}
+                  
+\subsection{Figuras}            
+         
+Ahora incluimos una figura, debe de estar en la misma carpeta que este archivo .tex
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\linewidth]{grafica1}
+	\caption{Gráfico de barras}
+\end{figure}
+
+\carath*
+                     
+\newpage                          
+\begin{thebibliography}{9}
+	\bibitem{Libro1} Pepe Rodríguez. Pepe y sus fogones       
+	\bibitem{Libro2} Pepe Rodríguez. {\textit{Pepe de vuelta con sus fogones}}
+	\bibitem{Libro3} Pepe Rodríguez. \textsf{Pepe de vuelta de nuevo}
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,117 @@
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% paquetes matemáticos
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amscd}
+\usepackage{latexsym}
+\usepackage{hyperref}
+
+
+%paquetes gráficos
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[width=14.00cm, height=20.00cm]{geometry}
+\setlength\parindent{0pt}
+
+\definecolor{moradito}{rgb}{119, 0, 218}
+
+%paquete para cambiar las etiquetas en listas
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{imakeidx}
+
+
+\usepackage{thm-restate}
+\usepackage{thmtools}
+
+
+\declaretheorem{theorem}
+\declaretheorem[name=Teorema, parent=chapter]{teorema}
+\declaretheorem[name=Lema, sibling=teorema]{lema}
+\declaretheorem[name=Proposición]{prop}
+\declaretheorem[name=Corolario]{corol}
+\declaretheorem[name=Definición, shaded={rulecolor=blue,rulewidth=1pt,bgcolor=yellow!25}]{definicion}
+
+
+\DeclareMathOperator*{\limito}{LiM}
+
+%paquetes idioma
+%\usepackage[spanish]{babel}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+%cambiando títulos de secciones
+\renewcommand{\bibname}{Libros}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\chaptername}{Tema}
+\renewcommand{\contentsname}{Índice}
+\renewcommand{\indexname}{Glosario}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\listtablename}{Lista de tablas}
+
+%creación de comandos
+
+%comando literal
+\newcommand{\raiz}{\ensuremath{\sqrt{x^4+5}}}
+%comando un argumento
+\newcommand{\ecu}[1]{\ensuremath{x^{#1}+y^{#1}=z^{#1}}} 
+%comando dos argumentos
+\newcommand{\ecudos}[2]{\ensuremath{x^{#1}+y^{#1}=z^{#2}}}
+%comando con un argumento opcional
+\newcommand{\ecuop}[1][2]{\ensuremath{x^{#1}+y^{#1}=z^{#1}}}
+
+\newcommand{\ecutres}[3][a]{\ensuremath{x^{#1}+y^{#2}=z^{#3}}}
+
+\newcommand{\suc}{\ensuremath{\mathcal\{x_n\}_{n\in \mathbb{N}}}}
+\newcommand{\suce}[1][x]{\ensuremath{\mathcal\{#1_n\}_{n\in \mathbb{N}}}}
+
+\renewcommand{\sin}{\operatorname{sen}}
+%para incluir bib, toc, index, listtab, listfig en indice
+\usepackage[nottoc]{tocbibind}
+
+\makeindex
+
+
+
+\begin{document}
+\frontmatter
+	\begin{titlepage}
+		\begin{center}
+		{\huge Libro Prueba}\\ \vspace{3cm}
+		{\bf Manuel Corral Pazos}\vspace{1cm}
+		
+		{manueljose.corral@rai.usc.es}
+		\\ \vspace{2cm}
+
+		\includegraphics[width=10cm]{logoUSC.png}
+		\end{center}
+	\end{titlepage}
+
+	\tableofcontents
+	\listoftables
+	
+	\chapter{Prólogo}
+
+	Este es el prólogo del libro.
+	
+	\mainmatter
+	
+	\input{cap1}
+	
+	\input{cap2}
+	
+	\input{cap3}
+	
+	\backmatter      
+	\begin{thebibliography}{9}
+		\bibitem{Libro1} Pepe Rodríguez. Pepe y sus fogones       
+		\bibitem{Libro2} Pepe Rodríguez. {\textit{Pepe de vuelta con sus fogones}}
+		\bibitem{Libro3} Pepe Rodríguez. \textsf{Pepe de vuelta de nuevo}
+	\end{thebibliography}
+	\printindex
+	
+\end{document}

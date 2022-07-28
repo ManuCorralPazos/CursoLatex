@@ -1,0 +1,97 @@
+\chapter{Primero}
+
+
+\section[Martes mañana]{Primera sección, Martes mañana}
+Esta es la primera sección.
+\subsection[Colores]{Algunos colores}
+Esta es una subsección de la primera sección\\
+Probamos a escribir en color, por ejemplo \textcolor{blue}{\bf esto iría en azul}. \textcolor{red}{\bf Esto iría en rojo.} Le ponemos el bf para que aparezca en negrita~\index{negrita}. Ahora utilizamos el \textcolor{moradito}{\bf color que definimos en la cabecera.}
+
+\subsection*{Enumerate (sección con *)}
+
+\begin{enumerate}[i).-]
+	\item Resuelve $\lim_{x\to \infty}\frac{1}{x^2+1}$
+	\begin{enumerate}[1;]
+		\item Calcula el límite anterior cuando $x\to 5$
+		\item Calcula el límite anterior cuando $x\to 10$
+	\end{enumerate} 
+	\item Resuelve $\lim_{x\to \infty} x$
+\end{enumerate}
+
+\begin{enumerate}
+	\item Resuelve $\lim_{x\to \infty}\frac{1}{x^2+1}$
+	\item Resuelve $\lim_{x\to \infty}\frac{1}{x^3+1}$
+	\item Resuelve $\lim_{x\to \infty}\frac{1}{x^4+1}$
+	\addtocounter{enumi}{2}
+	\begin{enumerate} 
+		\item Calcula el límite anterior cuando $x\to 5$
+		\item Calcula el límite anterior cuando $x\to 10$
+	\end{enumerate} 
+	\item Resuelve $\lim_{x\to \infty} x$
+	\item Resuelve $\lim_{x\to \infty}\frac{1}{x^6+1}$
+	\item Resuelve $\lim_{x\to \infty}\frac{1}{x^7+1}$
+	\addtocounter{enumi}{-5}
+	\item Resuelve $\lim_{x\to \infty}\frac{1}{x^8+1}$
+\end{enumerate}
+
+
+\section*{Segunda sección, sin número}
+\addcontentsline{toc}{section}{Segunda sección, sin número}
+
+Esta es la segunda sección
+\subsection[Matemáticas]{Escribir en matemáticas}
+Esta es una subsección de la segunda sección.\\
+Ejemplos de escribir matemáticamente
+Ejemplo para introducir matemáticas en una línea $y=f(x)=x+2$, ahora en bloque \[y=f(x)=x+2\]
+
+\begin{definicion}[Grupo abeliano] \label{definicion:abeliano}
+	Un grupo abeliano (aditivo) está formado por una pareja $(A, +)$, donde $A$ es un conjunto no vacío y $+ : A\times A \rightarrow A$ es una aplicación (que llamamos operación binaria o ley de composición interna y denotamos $+ (a, b) = a + b$); que satisfacen los siguientes axiomas:
+	\begin{enumerate}
+		\item "+" es asociativa; es decir, para cualesquiera elementos $ a,b,c\in A$ se tiene $a+(b+c)=(a+b)+c$.
+		\item Existe el (único) neutro que solemos escribir $0\in A$ tal que $0+a=a+0=a, \forall a\in A$.
+	\end{enumerate}
+\end{definicion}
+
+\begin{teorema}[Pequeño Teorema de Euler] \label{thm:pequeñoeuler}
+	Sean $a,m\in \mathbb{Z}$ tales que $\boxed{\gcd(a, m)=1}$, entonces \[a^{\phi(m)}\equiv_m1\]
+\end{teorema}
+
+Como se puede ver en el Pequeño Teorema de Euler \ref{thm:pequeñoeuler}, queda demostrado.
+
+\begin{teorema}
+	Sean $\forall A, B, C\in \mathcal{M}_{m\times n}(\mathcal{R})$ y $\forall \alpha, \beta\in \mathbb{R}$, se verifica:
+	\begin{multicols}{2}
+		\begin{enumerate} 
+			\item $A+B=B+A$
+			\item $\alpha(\beta A)=(\alpha \beta)A$
+			\item $(A+B)+C=A+(B+C)$
+			\item $(\alpha+\beta)A=\alpha A + \beta B$
+		\end{enumerate}
+	\end{multicols}
+\end{teorema}
+
+
+\begin{lema}
+	Sea K un cuerpo. El cojunto $\mathbb{M}_{m\times n}(K)$, junto con la suma definida tiene estructura de grupo abueliano.
+\end{lema}
+
+
+\subsection[Escritura]{Algo de escritura}
+Aquí ponemos algún array
+\[
+\left (
+\begin{array}{rrr|r} 
+	-1 & 2 &  3 &   0 \\ 
+	3 & 4 & -7 &   2\\
+	6 & 5 & 90 & -11
+\end{array} 
+\right )
+\]
+
+Ponemos una ecuación para referenciar
+\begin{equation} \label{eq:1} 
+	\sum_{i=0}^{\infty} a_i x^i
+\end{equation}
+
+Ecuación \ref{eq:1} referenciada
+
